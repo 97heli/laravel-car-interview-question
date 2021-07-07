@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::namespace('HeLiTest')->prefix('helitest')->group(function () {
+    //route
+    Route::prefix('test')->group(function () {
+        Route::any('appointmentsList', 'TestController@appointmentsList');
+        Route::any('saveAppointments', 'TestController@saveAppointments');
+        Route::any('workshopsList', 'TestController@workshopsList');
+    });
+});

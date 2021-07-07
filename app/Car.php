@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    //
     public function appointments()
     {
         return $this->hasMany(Appointment::class);
@@ -17,6 +16,6 @@ class Car extends Model
 
     public function contact()
     {
-        return $this->belongsTo(Contact::class);
+        return $this->hasOne(Contact::class,'id','contact_id');
     }
 }

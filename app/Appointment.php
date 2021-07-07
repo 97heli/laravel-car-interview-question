@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
 {
-    //
+    protected $table = 'appointments';
     public function car()
     {
-        return $this->belongsTo(Car::class);
+        return $this->hasOne(Car::class,'id','car_id');
     }
 
     public function workshop()
     {
-        return $this->belongsTo(Workshop::class);
+        return $this->hasOne(Workshop::class,'id','workshop_id');
     }
 }

@@ -8,7 +8,6 @@
  */
 
 define('LARAVEL_START', microtime(true));
-
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -56,5 +55,7 @@ $response = $kernel->handle(
 );
 
 $response->send();
+
+
 
 $kernel->terminate($request, $response);
